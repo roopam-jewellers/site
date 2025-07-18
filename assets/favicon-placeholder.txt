@@ -1,0 +1,17 @@
+# Favicon placeholder
+# 
+# This file serves as a placeholder for the favicon.ico file.
+# 
+# To create a proper favicon:
+# 1. Create a 32x32 pixel icon in ICO format
+# 2. Name it favicon.ico
+# 3. Place it in the assets/ folder
+# 
+# You can create favicons using:
+# - Favicon.io (https://favicon.io/)
+# - Canva
+# - GIMP
+# - Photoshop
+# 
+# The favicon should represent your jewellery brand,
+# perhaps a simple diamond or jewel icon in your brand colors.

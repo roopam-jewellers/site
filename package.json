@@ -1,0 +1,45 @@
+{
+  "name": "elegant-jewellery-website",
+  "version": "1.0.0",
+  "description": "Professional responsive business website for luxury jewellery shop with GitHub Pages deployment and Firebase integration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000 -o",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "gh-pages -d .",
+    "lint": "echo 'Add linting tools as needed'",
+    "test": "echo 'Add testing tools as needed'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/site.git"
+  },
+  "keywords": [
+    "jewellery",
+    "website",
+    "responsive",
+    "github-pages",
+    "firebase",
+    "business",
+    "static-site",
+    "pwa"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/site/issues"
+  },
+  "homepage": "https://your-username.github.io/site/",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "gh-pages": "^6.1.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

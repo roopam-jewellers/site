@@ -1,0 +1,20 @@
+# CNAME Configuration for Custom Domain
+# 
+# To use a custom domain with GitHub Pages:
+# 
+# 1. Uncomment the line below and replace with your domain
+# 2. Configure your DNS provider to point to GitHub Pages
+# 3. Enable HTTPS in your GitHub repository settings
+# 
+# Example:
+# elegantjewellery.com
+# 
+# DNS Configuration:
+# - For apex domain (example.com): A records to GitHub IPs
+# - For subdomain (www.example.com): CNAME to username.github.io
+# 
+# GitHub Pages IPs (A records):
+# 185.199.108.153
+# 185.199.109.153  
+# 185.199.110.153
+# 185.199.111.153

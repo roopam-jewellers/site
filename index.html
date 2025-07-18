@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roopam Jewellery - Luxury Custom Ornaments</title>
+    <meta name="description" content="Discover exquisite handcrafted jewellery and custom ornament creation services. Premium quality with elegant designs for every occasion.">
+    <meta name="keywords" content="jewellery, custom ornaments, handcrafted, luxury, gold, silver, diamonds, engagement rings">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a365d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Roopam Jewellery">
+    <link rel="apple-touch-icon" href="assets/images/icon-192.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    
+    <!-- Firebase Environment Variables (injected during deployment) -->
+    <script src="assets/js/firebase-env.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Loading...</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Loading...</h1>
+                <p class="hero-subtitle">Please wait while we load your content...</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Explore Collection</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/1200x800/1a365d/ffffff?text=Loading..." alt="Gold and Silver Jewellery Collection">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loading Products...</h2>
+                <p class="section-subtitle">Please wait while we load our collection</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="products-carousel">
+                    <div class="carousel-track">
+                        <!-- Products will be dynamically loaded here -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/400x300/1a365d/ffffff?text=Loading..." alt="Loading...">
+                            </div>
+                            <div class="product-info">
+                                <h3>Loading...</h3>
+                                <p>Please wait while we load our products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-prev" id="products-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="products-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loading Services...</h2>
+                <p class="section-subtitle">Please wait while we load our services</p>
+            </div>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="services-carousel">
+                    <div class="carousel-track">
+                        <!-- Services will be dynamically loaded here -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h3>Loading...</h3>
+                            <p>Please wait while we load our services...</p>
+                            <a href="#contact" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-btn-prev" id="services-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="services-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="about-intro">For over three decades, Roopam Jewellery has been crafting exceptional pieces that celebrate life's most precious moments.</p>
+                    
+                    <div class="about-story">
+                        <p>Founded in 1990 by master jeweler Marcus Sterling, our boutique began as a small workshop dedicated to preserving the traditional art of fine jewelry making. Today, we continue this legacy by combining time-honored techniques with contemporary design sensibilities.</p>
+                        
+                        <p>Our mission is simple: to create jewelry that tells your unique story. Whether it's an engagement ring that symbolizes eternal love, a custom necklace that captures a special memory, or a family heirloom restoration that preserves history, every piece we create is infused with passion, precision, and purpose.</p>
+                    </div>
+                    
+                    <div class="about-values">
+                        <h3>Our Values</h3>
+                        <ul>
+                            <li><strong>Quality:</strong> We use only the finest materials and traditional craftsmanship</li>
+                            <li><strong>Integrity:</strong> Honest pricing and transparent business practices</li>
+                            <li><strong>Creativity:</strong> Innovative designs that reflect your personal style</li>
+                            <li><strong>Service:</strong> Personalized attention for every client</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Satisfaction Guarantee</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about our services</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does custom jewelry design take?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Custom jewelry typically takes 4-6 weeks from initial consultation to completion. The timeline may vary depending on the complexity of the design and material availability. We'll provide you with a detailed timeline during your consultation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer financing options?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer flexible financing options including 0% interest plans for qualified customers. We also accept all major credit cards and offer layaway programs for special occasions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your warranty policy?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All our jewelry comes with a comprehensive lifetime warranty covering manufacturing defects. We also offer complimentary cleaning and inspection services for the life of your purchase.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you resize rings and modify existing jewelry?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our expert jewelers can resize rings, modify settings, and update vintage pieces. We offer free sizing for the first year after purchase and competitive rates for all modification services.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you buy or trade existing jewelry?</h3>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer fair market value for gold, silver, and precious stones. We also provide trade-in credit toward new purchases. Bring your pieces in for a free evaluation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Ready to create something beautiful? Let's start the conversation.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Our Showroom</h3>
+                            <p>123 Diamond District<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p>(555) 123-4567<br>Mon-Sat 10AM-7PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p>info@elegantjewellery.com<br>support@elegantjewellery.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="custom-design">Custom Design</option>
+                            <option value="repair">Repair & Restoration</option>
+                            <option value="appraisal">Appraisal</option>
+                            <option value="wedding">Wedding Collection</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project or inquiry..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    
+                    <div class="form-status" id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Roopam Jewellery</h3>
+                    <p>Crafting memories that last a lifetime with exceptional quality and unparalleled service.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Custom Design</a></li>
+                        <li><a href="#services">Repair & Restoration</a></li>
+                        <li><a href="#services">Appraisal</a></li>
+                        <li><a href="#services">Wedding Collections</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Diamond District, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@elegantjewellery.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Roopam Jewellery. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/config-manager.js"></script>
+    <script src="assets/js/content-injector.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

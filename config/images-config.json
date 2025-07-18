@@ -1,0 +1,95 @@
+{
+  "images": {
+    "hero": {
+      "main": "hero/gold-silver-collection.jpg",
+      "alt": "Premium Gold and Silver Jewellery Collection"
+    },
+    "products": [
+      {
+        "category": "gold-ornaments",
+        "filename": "products/gold-necklace-set.jpg",
+        "alt": "Traditional Gold Necklace Set",
+        "title": "Gold Ornaments",
+        "description": "Pure gold jewellery in traditional and modern designs"
+      },
+      {
+        "category": "silver-jewellery", 
+        "filename": "products/silver-bracelet-collection.jpg",
+        "alt": "Sterling Silver Bracelet Collection",
+        "title": "Silver Jewellery",
+        "description": "Sterling silver pieces with intricate craftsmanship"
+      },
+      {
+        "category": "gold-coins",
+        "filename": "products/gold-coins-bars.jpg", 
+        "alt": "Gold Coins and Investment Bars",
+        "title": "Gold Coins & Bars",
+        "description": "Investment grade gold in various denominations"
+      },
+      {
+        "category": "silver-artifacts",
+        "filename": "products/silver-artifacts.jpg",
+        "alt": "Decorative Silver Artifacts and Gift Items", 
+        "title": "Silver Artifacts",
+        "description": "Decorative silver items and gift articles"
+      }
+    ],
+    "services": [
+      {
+        "service": "purchase",
+        "filename": "services/gold-silver-purchase.jpg",
+        "alt": "Gold and Silver Purchase Service"
+      },
+      {
+        "service": "sale",
+        "filename": "services/gold-silver-sale.jpg", 
+        "alt": "Gold and Silver Sale Service"
+      },
+      {
+        "service": "exchange",
+        "filename": "services/exchange-service.jpg",
+        "alt": "Gold and Silver Exchange Service"
+      },
+      {
+        "service": "repair", 
+        "filename": "services/repair-maintenance.jpg",
+        "alt": "Jewellery Repair and Maintenance Service"
+      }
+    ],
+    "gallery": [
+      {
+        "filename": "gallery/traditional-gold-jewellery.jpg",
+        "alt": "Traditional Gold Jewellery Designs",
+        "category": "traditional"
+      },
+      {
+        "filename": "gallery/modern-silver-collection.jpg", 
+        "alt": "Modern Silver Jewellery Collection",
+        "category": "modern"
+      },
+      {
+        "filename": "gallery/bridal-gold-set.jpg",
+        "alt": "Bridal Gold Jewellery Set",
+        "category": "bridal"
+      },
+      {
+        "filename": "gallery/silver-gift-items.jpg",
+        "alt": "Silver Gift Items and Artifacts", 
+        "category": "gifts"
+      }
+    ],
+    "placeholders": {
+      "product": "https://via.placeholder.com/400x300/1a365d/ffffff?text=Product+Image",
+      "service": "https://via.placeholder.com/300x200/2c5282/ffffff?text=Service+Image",
+      "hero": "https://via.placeholder.com/1200x800/1a365d/ffffff?text=Hero+Image"
+    }
+  },
+  "firebase": {
+    "storage": {
+      "bucket": "your-project-id.appspot.com",
+      "folder": "jewellery-website",
+      "imageQualities": ["400x300", "800x600", "1200x800"],
+      "supportedFormats": ["jpg", "jpeg", "png", "webp"]
+    }
+  }
+}

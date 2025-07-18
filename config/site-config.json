@@ -1,0 +1,153 @@
+{
+  "business": {
+    "name": "Roopam Jewellers",
+    "tagline": "Premium Gold & Silver Ornaments",
+    "description": "Your trusted partner for authentic gold and silver jewellery with expert craftsmanship and reliable service since generations",
+    "address": {
+      "street": "TB Road,",
+      "city": "Kuppam",
+      "state": "Andhra Pradesh", 
+      "zipCode": "517425",
+      "country": "India"
+    },
+    "contact": {
+      "phone": "+91 9989898294",
+      "email": "roopamjewellery1988@gmail.com",
+      "whatsapp": "+91 9989898294"
+    },
+    "hours": {
+      "weekdays": "Mon-Sat 9:30 AM - 8:30 PM",
+      "sunday": "10:00 AM - 7:00 PM"
+    },
+    "social": {
+      "facebook": "https://facebook.com/roopamjewellers",
+      "instagram": "https://instagram.com/roopamjewellers",
+      "whatsapp": "https://wa.me/919989898294"
+    }
+  },
+  "hero": {
+    "title": "Exquisite Gold & Silver Collection at Roopam Jewellers",
+    "subtitle": "Discover our premium collection of authentic gold and silver ornaments crafted with traditional expertise and modern designs in Kadiri",
+    "primaryButton": "Explore Collection",
+    "secondaryButton": "Our Services"
+  },
+  "about": {
+    "title": "Our Legacy at Roopam Jewellers",
+    "intro": "For over two decades, Roopam Jewellers has been your trusted destination for authentic gold and silver ornaments in Kadiri, Andhra Pradesh.",
+    "story": [
+      "Established with a vision to serve the people of Kadiri and surrounding areas, Roopam Jewellers has built a reputation for trust, quality, and exceptional service. What started as a small family business has grown into one of the most respected names in the precious metals industry in the region.",
+      "We specialize exclusively in gold and silver ornaments, ensuring our expertise remains focused on what we do best. From traditional South Indian designs that honor our rich cultural heritage to contemporary pieces that reflect modern aesthetics, every item in our collection represents quality and authenticity.",
+      "Our commitment extends beyond just selling jewellery. We offer comprehensive services including buying, selling, exchanging, and maintaining your precious gold and silver investments, always at fair market rates with complete transparency."
+    ],
+    "values": [
+      {
+        "title": "Authenticity",
+        "description": "100% genuine gold and silver with proper hallmarking and BIS certification"
+      },
+      {
+        "title": "Fair Pricing", 
+        "description": "Transparent pricing based on current market rates with no hidden charges"
+      },
+      {
+        "title": "Expert Service",
+        "description": "Knowledgeable staff with years of experience in precious metals and traditional craftsmanship"
+      },
+      {
+        "title": "Trust",
+        "description": "Building long-term relationships through honest business practices and reliable service"
+      }
+    ],
+    "stats": [
+      {
+        "number": "20+",
+        "label": "Years of Excellence"
+      },
+      {
+        "number": "5,000+",
+        "label": "Happy Customers"
+      },
+      {
+        "number": "100%",
+        "label": "Authentic Products"
+      }
+    ]
+  },
+  "products": {
+    "title": "Our Gold & Silver Collection",
+    "subtitle": "Authentic precious metal ornaments for every occasion",
+    "categories": [
+      {
+        "name": "Gold Ornaments",
+        "description": "Pure gold jewellery in traditional and modern designs",
+        "priceRange": "As per current gold rate"
+      },
+      {
+        "name": "Silver Jewellery", 
+        "description": "Sterling silver pieces with intricate craftsmanship",
+        "priceRange": "As per current silver rate"
+      },
+      {
+        "name": "Gold Coins & Bars",
+        "description": "Investment grade gold in various denominations", 
+        "priceRange": "Market rate + making charges"
+      },
+      {
+        "name": "Silver Artifacts",
+        "description": "Decorative silver items and gift articles",
+        "priceRange": "As per current silver rate"
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Specialized Services",
+    "subtitle": "Complete solutions for your gold and silver needs",
+    "offerings": [
+      {
+        "name": "Gold & Silver Purchase",
+        "icon": "fas fa-coins",
+        "description": "We buy your old gold and silver ornaments at the best market rates with instant payment and transparent evaluation.",
+        "features": ["Instant evaluation", "Best market rates", "Immediate payment", "No hidden charges"]
+      },
+      {
+        "name": "Gold & Silver Sale",
+        "icon": "fas fa-store",
+        "description": "Choose from our extensive collection of certified gold and silver ornaments with guaranteed purity and authenticity.",
+        "features": ["Certified purity", "Hallmarked products", "Wide variety", "Competitive pricing"]
+      },
+      {
+        "name": "Exchange Services",
+        "icon": "fas fa-exchange-alt", 
+        "description": "Exchange your old gold and silver for new designs. Pay only the difference in weight and making charges.",
+        "features": ["Old for new exchange", "Minimal making charges", "Design upgrades", "Weight adjustment"]
+      },
+      {
+        "name": "Repair & Maintenance",
+        "icon": "fas fa-tools",
+        "description": "Expert repair and maintenance services for your precious gold and silver ornaments to restore their original beauty.",
+        "features": ["Expert craftsmanship", "Original finish restoration", "Chain repairs", "Stone setting"]
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "Do you provide purity certificates for gold and silver?",
+      "answer": "Yes, all our gold and silver products come with proper hallmarking and purity certificates. We ensure 100% authenticity and provide BIS hallmarking certificates where applicable."
+    },
+    {
+      "question": "What are your current gold and silver rates?",
+      "answer": "Our rates are updated daily based on current market prices. Please visit our store or call us for today's rates. We offer competitive pricing with transparent calculations."
+    },
+    {
+      "question": "Do you offer exchange services for old jewellery?",
+      "answer": "Yes, we offer exchange services for old gold and silver ornaments. You can exchange your old pieces for new designs by paying only the weight difference and applicable making charges."
+    },
+    {
+      "question": "What is your return and exchange policy?",
+      "answer": "We offer a 7-day return policy for new purchases with original receipt and tags. Exchange is available within 30 days with minimal charges for weight and design differences."
+    },
+    {
+      "question": "Do you provide home delivery services?",
+      "answer": "Yes, we provide secure home delivery for purchases above ₹50,000 within the city limits. For high-value transactions, we also offer home evaluation services."
+    }
+  ]
+}
