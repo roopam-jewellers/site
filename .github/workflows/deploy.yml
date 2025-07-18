@@ -52,6 +52,22 @@ jobs:
           window.FIREBASE_APP_ID = '${{ secrets.FIREBASE_APP_ID }}';
           EOF
           
+      - name: Fix asset paths for GitHub Pages subdirectory
+        run: |
+          # Update paths in JavaScript files to work with /site/ subdirectory
+          sed -i "s|fetch('/config/|fetch('./config/|g" assets/js/config-manager.js
+          
+          # Update service worker paths
+          sed -i "s|'/|'./|g" sw.js
+          
+          # Update manifest.json paths if they exist
+          if [ -f manifest.json ]; then
+            sed -i 's|"start_url": "/"|"start_url": "./"|g' manifest.json
+            sed -i 's|"scope": "/"|"scope": "./"|g' manifest.json
+          fi
+          
+          echo "Asset paths updated for GitHub Pages subdirectory deployment"
+          
       - name: Build site (if needed)
         run: |
           # Add any build steps here if you have a build process
