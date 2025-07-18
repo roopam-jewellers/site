@@ -42,14 +42,37 @@ jobs:
           
       - name: Inject Firebase Configuration
         run: |
-          # Create a JavaScript file with Firebase config from secrets
-          cat > assets/js/firebase-env.js << EOF
-          window.FIREBASE_API_KEY = '${{ secrets.FIREBASE_API_KEY }}';
-          window.FIREBASE_AUTH_DOMAIN = '${{ secrets.FIREBASE_AUTH_DOMAIN }}';
-          window.FIREBASE_PROJECT_ID = '${{ secrets.FIREBASE_PROJECT_ID }}';
-          window.FIREBASE_STORAGE_BUCKET = '${{ secrets.FIREBASE_STORAGE_BUCKET }}';
-          window.FIREBASE_MESSAGING_SENDER_ID = '${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}';
-          window.FIREBASE_APP_ID = '${{ secrets.FIREBASE_APP_ID }}';
+          # Create a more secure Firebase config with domain validation
+          cat > assets/js/firebase-env.js << 'EOF'
+          // Firebase Environment Configuration - Generated during deployment
+          // This configuration includes domain validation and security checks
+          (function() {
+            'use strict';
+            
+            // Only set Firebase config if domain is authorized
+            const authorizedDomains = ['roopam-jewellery.github.io'];
+            const currentDomain = window.location.hostname;
+            const isAuthorized = authorizedDomains.some(domain => 
+              currentDomain === domain || currentDomain.endsWith('.' + domain)
+            );
+            
+            if (isAuthorized || currentDomain === 'localhost' || currentDomain === '127.0.0.1') {
+              // Set configuration only for authorized domains
+              window.FIREBASE_API_KEY = '${{ secrets.FIREBASE_API_KEY }}';
+              window.FIREBASE_AUTH_DOMAIN = '${{ secrets.FIREBASE_AUTH_DOMAIN }}';
+              window.FIREBASE_PROJECT_ID = '${{ secrets.FIREBASE_PROJECT_ID }}';
+              window.FIREBASE_STORAGE_BUCKET = '${{ secrets.FIREBASE_STORAGE_BUCKET }}';
+              window.FIREBASE_MESSAGING_SENDER_ID = '${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}';
+              window.FIREBASE_APP_ID = '${{ secrets.FIREBASE_APP_ID }}';
+              
+              // Add timestamp and validation
+              window.FIREBASE_CONFIG_TIMESTAMP = new Date().toISOString();
+              console.log('Firebase configuration loaded for authorized domain');
+            } else {
+              console.warn('Unauthorized domain - Firebase configuration not loaded');
+              window.FIREBASE_UNAUTHORIZED = true;
+            }
+          })();
           EOF
           
       - name: Fix asset paths for GitHub Pages subdirectory

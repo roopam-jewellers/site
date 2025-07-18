@@ -255,8 +255,9 @@
             
             try {
                 // Try to submit to Firebase if available
-                if (window.firebaseDB) {
-                    await submitToFirebase(data);
+                const db = window.getFirebaseDB ? window.getFirebaseDB() : null;
+                if (db && !window.FIREBASE_OFFLINE_MODE) {
+                    await submitToFirebase(data, db);
                     showFormStatus('Thank you! Your message has been sent successfully. We\'ll get back to you soon.', 'success');
                 } else {
                     // Fallback: simulate submission (for demo purposes)
@@ -276,12 +277,12 @@
         });
     }
 
-    async function submitToFirebase(data) {
-        if (!window.firebaseDB) {
+    async function submitToFirebase(data, db) {
+        if (!db) {
             throw new Error('Firebase not initialized');
         }
         
-        await window.firebaseDB.collection('contact-messages').add(data);
+        await db.collection('contact-messages').add(data);
     }
 
     async function simulateFormSubmission(data) {
