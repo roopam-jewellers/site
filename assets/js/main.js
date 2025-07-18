@@ -244,6 +244,7 @@
                 service: formData.get('service') || '',
                 message: formData.get('message'),
                 timestamp: new Date().toISOString(),
+                read: false, // Default to false, will be updated by server
                 userAgent: navigator.userAgent
             };
             
