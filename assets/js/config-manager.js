@@ -88,22 +88,29 @@ class ConfigManager {
 
         try {
             if (this.storageRef) {
-                // Try to get image from Firebase Storage
+                // Try to get image from Firebase Storage (gallery folder)
                 const fullPath = `${this.imagesConfig.firebase.storage.folder}/${imagePath}`;
                 const imageRef = this.storageRef.child(fullPath);
                 const url = await imageRef.getDownloadURL();
                 
                 // Cache the URL
                 this.imageCache.set(imagePath, url);
+                console.log(`Successfully loaded image: ${imagePath}`);
                 return url;
             }
         } catch (error) {
-            console.warn(`Image not found in Firebase Storage: ${imagePath}`, error);
+            console.warn(`Image not found in Firebase Storage: ${imagePath}`, error.message);
+            
+            // If it's a permission error, provide more specific guidance
+            if (error.code === 'storage/unauthorized') {
+                console.error(`🔒 Firebase Storage Permission Error: Please update your Firebase Storage security rules to allow public read access to the '${this.imagesConfig.firebase.storage.folder}' folder.`);
+            }
         }
 
         // Fallback to placeholder
         const placeholderUrl = this.imagesConfig.images.placeholders[category] || 
                               this.imagesConfig.images.placeholders.product;
+        console.log(`Using placeholder for ${imagePath}: ${category}`);
         return placeholderUrl;
     }
 

@@ -1,0 +1,6 @@
+<!-- Favicon SVG - Simple Gold Ring Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <rect width="32" height="32" fill="#1a365d"/>
+    <circle cx="16" cy="16" r="8" fill="none" stroke="#FFD700" stroke-width="3"/>
+    <circle cx="16" cy="12" r="2" fill="#FFD700"/>
+</svg>
