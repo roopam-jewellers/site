@@ -4,7 +4,7 @@
     "tagline": "Premium Gold & Silver Ornaments",
     "description": "Your trusted partner for authentic gold and silver jewellery with expert craftsmanship and reliable service since generations",
     "address": {
-      "street": "TB Road,",
+      "street": "TB Road",
       "city": "Kuppam",
       "state": "Andhra Pradesh", 
       "zipCode": "517425",
@@ -16,7 +16,7 @@
       "whatsapp": "+91 9989898294"
     },
     "hours": {
-      "weekdays": "Mon-Sat 9:30 AM - 8:30 PM",
+      "weekdays": "Mon-Sat 9:30 AM - 7:30 PM",
       "sunday": "10:00 AM - 7:00 PM"
     },
     "social": {
@@ -27,15 +27,15 @@
   },
   "hero": {
     "title": "Exquisite Gold & Silver Collection at Roopam Jewellers",
-    "subtitle": "Discover our premium collection of authentic gold and silver ornaments crafted with traditional expertise and modern designs in Kadiri",
+    "subtitle": "Discover our premium collection of authentic gold and silver ornaments crafted with traditional expertise and modern designs in Kuppam",
     "primaryButton": "Explore Collection",
     "secondaryButton": "Our Services"
   },
   "about": {
     "title": "Our Legacy at Roopam Jewellers",
-    "intro": "For over two decades, Roopam Jewellers has been your trusted destination for authentic gold and silver ornaments in Kadiri, Andhra Pradesh.",
+    "intro": "For over two decades, Roopam Jewellers has been your trusted destination for authentic gold and silver ornaments in Kuppam, Andhra Pradesh.",
     "story": [
-      "Established with a vision to serve the people of Kadiri and surrounding areas, Roopam Jewellers has built a reputation for trust, quality, and exceptional service. What started as a small family business has grown into one of the most respected names in the precious metals industry in the region.",
+      "Established with a vision to serve the people of Kuppam and surrounding areas, Roopam Jewellers has built a reputation for trust, quality, and exceptional service. What started as a small family business has grown into one of the most respected names in the precious metals industry in the region.",
       "We specialize exclusively in gold and silver ornaments, ensuring our expertise remains focused on what we do best. From traditional South Indian designs that honor our rich cultural heritage to contemporary pieces that reflect modern aesthetics, every item in our collection represents quality and authenticity.",
       "Our commitment extends beyond just selling jewellery. We offer comprehensive services including buying, selling, exchanging, and maintaining your precious gold and silver investments, always at fair market rates with complete transparency."
     ],
