@@ -28,7 +28,7 @@ class ConfigManager {
     // Load site configuration
     async loadSiteConfig() {
         try {
-            const response = await fetch('/config/site-config.json');
+            const response = await fetch('./config/site-config.json');
             if (!response.ok) throw new Error('Failed to load site config');
             this.siteConfig = await response.json();
         } catch (error) {
@@ -41,7 +41,7 @@ class ConfigManager {
     // Load images configuration  
     async loadImagesConfig() {
         try {
-            const response = await fetch('/config/images-config.json');
+            const response = await fetch('./config/images-config.json');
             if (!response.ok) throw new Error('Failed to load images config');
             this.imagesConfig = await response.json();
         } catch (error) {
@@ -52,14 +52,28 @@ class ConfigManager {
     }
 
     // Initialize Firebase Storage
-    initFirebaseStorage() {
+    async initFirebaseStorage() {
         try {
-            if (window.firebaseDB && firebase.storage) {
-                this.storageRef = firebase.storage().ref();
-                console.log('Firebase Storage initialized');
-            } else {
-                console.log('Firebase Storage not available - using placeholder images');
+            // Wait for Firebase to be initialized
+            let attempts = 0;
+            const maxAttempts = 10;
+            
+            while (attempts < maxAttempts) {
+                if (window.isFirebaseInitialized && window.isFirebaseInitialized()) {
+                    const storage = window.getFirebaseStorage();
+                    if (storage) {
+                        this.storageRef = storage.ref();
+                        console.log('Firebase Storage initialized successfully');
+                        return;
+                    }
+                }
+                
+                // Wait 100ms before checking again
+                await new Promise(resolve => setTimeout(resolve, 100));
+                attempts++;
             }
+            
+            console.log('Firebase Storage not available - using placeholder images');
         } catch (error) {
             console.error('Firebase Storage initialization error:', error);
         }

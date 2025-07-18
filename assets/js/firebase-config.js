@@ -84,6 +84,14 @@ class FirebaseManager {
             firebase.initializeApp(config);
             this.db = firebase.firestore();
             
+            // Initialize Firebase Storage if available
+            if (firebase.storage) {
+                this.storage = firebase.storage();
+                console.log('Firebase Storage initialized');
+            } else {
+                console.warn('Firebase Storage SDK not loaded');
+            }
+            
             // Test connection and validate setup
             await this.validateSetup();
             
@@ -153,6 +161,20 @@ class FirebaseManager {
         return this.db;
     }
 
+    // Get Firebase Storage instance
+    getStorage() {
+        if (!this.initialized || !this.storage) {
+            console.warn('Firebase Storage not available');
+            return null;
+        }
+        return this.storage;
+    }
+
+    // Check if Firebase is properly initialized
+    isInitialized() {
+        return this.initialized;
+    }
+
     // Clean up sensitive data (call this on page unload if needed)
     cleanup() {
         if (window.FIREBASE_API_KEY) {
@@ -182,3 +204,5 @@ window.addEventListener('beforeunload', () => {
 // Export for backward compatibility
 window.firebaseDB = null;
 window.getFirebaseDB = () => firebaseManager.getFirestore();
+window.getFirebaseStorage = () => firebaseManager.getStorage();
+window.isFirebaseInitialized = () => firebaseManager.isInitialized();
