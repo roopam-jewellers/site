@@ -103,12 +103,6 @@
     "subtitle": "Complete solutions for your gold and silver needs",
     "offerings": [
       {
-        "name": "Gold & Silver Purchase",
-        "icon": "fas fa-coins",
-        "description": "We buy your old gold and silver ornaments at the best market rates with instant payment and transparent evaluation.",
-        "features": ["Instant evaluation", "Best market rates", "Immediate payment", "No hidden charges"]
-      },
-      {
         "name": "Gold & Silver Sale",
         "icon": "fas fa-store",
         "description": "Choose from our extensive collection of certified gold and silver ornaments with guaranteed purity and authenticity.",
