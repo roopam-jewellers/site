@@ -1,59 +1,68 @@
 {
   "images": {
     "hero": {
-      "main": "1752841372878?alt=media&token=959e0df8-86c4-44eb-a2e6-9979fa947ba0",
-      "alt": "Premium Gold and Silver Jewellery Collection"
+      "main": "1752841372878",
+      "alt": "Premium Gold and Silver Jewellery Collection",
+      "token": "959e0df8-86c4-44eb-a2e6-9979fa947ba0"
     },
     "products": [
       {
         "category": "gold-ornaments",
-        "filename": "1752841400803?alt=media&token=ac765df8-555f-4437-8184-12eb8d7da55c",
+        "filename": "1752841400803",
         "alt": "Traditional Gold Ornament Collection",
         "title": "Gold Ornaments",
-        "description": "Pure gold jewellery in traditional and modern designs"
+        "description": "Pure gold jewellery in traditional and modern designs",
+        "token": "ac765df8-555f-4437-8184-12eb8d7da55c"
       },
       {
         "category": "silver-jewellery", 
-        "filename": "1752841440003?alt=media&token=eefa683b-d51e-40f0-a900-24b9487719fa",
+        "filename": "1752841440003",
         "alt": "Sterling Silver Jewellery Collection",
         "title": "Silver Jewellery",
-        "description": "Sterling silver pieces with intricate craftsmanship"
+        "description": "Sterling silver pieces with intricate craftsmanship",
+        "token": "eefa683b-d51e-40f0-a900-24b9487719fa"
       },
       {
         "category": "gold-coins",
-        "filename": "1752841461673?alt=media&token=b2e0c4b8-168c-49d0-b6ad-45faf46870a1",
+        "filename": "1752841461673",
         "alt": "Gold Coins and Investment Pieces",
         "title": "Gold Coins & Bars",
-        "description": "Investment grade gold in various denominations"
+        "description": "Investment grade gold in various denominations",
+        "token": "b2e0c4b8-168c-49d0-b6ad-45faf46870a1"
       },
       {
         "category": "silver-artifacts",
-        "filename": "1752841481970?alt=media&token=07ae566e-e023-4fe1-a5ab-92961b9ddec2",
+        "filename": "1752841481970",
         "alt": "Decorative Silver Artifacts and Gift Items", 
         "title": "Silver Artifacts",
-        "description": "Decorative silver items and gift articles"
+        "description": "Decorative silver items and gift articles",
+        "token": "07ae566e-e023-4fe1-a5ab-92961b9ddec2"
       }
     ],
     "services": [
       {
         "service": "purchase",
-        "filename": "1752841506435?alt=media&token=925ee815-8963-44c6-92a3-ae009039e1ce",
-        "alt": "Gold and Silver Purchase Service"
+        "filename": "1752841506435",
+        "alt": "Gold and Silver Purchase Service",
+        "token": "925ee815-8963-44c6-92a3-ae009039e1ce"
       },
       {
         "service": "sale",
-        "filename": "1752841537616?alt=media&token=70e655b2-54b3-48be-ab42-e42c93194a00", 
-        "alt": "Gold and Silver Sale Service"
+        "filename": "1752841537616",
+        "alt": "Gold and Silver Sale Service",
+        "token": "70e655b2-54b3-48be-ab42-e42c93194a00"
       },
       {
         "service": "exchange",
         "filename": "1752841557267?alt=media&token=9254a23d-8ad6-456f-a046-705e06344e9e",
-        "alt": "Gold and Silver Exchange Service"
+        "alt": "Gold and Silver Exchange Service",
+        "token": "9254a23d-8ad6-456f-a046-705e06344e9e"
       },
       {
         "service": "repair", 
         "filename": "1752841584544?alt=media&token=8f804851-ad7a-4cf2-82c5-e388de654d7e",
-        "alt": "Jewellery Repair and Maintenance Service"
+        "alt": "Jewellery Repair and Maintenance Service",
+        "token": "8f804851-ad7a-4cf2-82c5-e388de654d7e"
       }
     ],
     "gallery": [

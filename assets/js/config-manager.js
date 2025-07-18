@@ -79,27 +79,58 @@ class ConfigManager {
         }
     }
 
-    // Get image URL from Firebase Storage or fallback to placeholder
-    async getImageUrl(imagePath, category = 'product') {
+    // Get image URL from Firebase Storage with token or fallback to placeholder
+    async getImageUrl(imageData, category = 'product') {
+        // Handle both old string format and new object format
+        let imagePath, token;
+        
+        if (typeof imageData === 'string') {
+            imagePath = imageData;
+            token = null;
+        } else if (imageData && typeof imageData === 'object') {
+            imagePath = imageData.filename || imageData.main;
+            token = imageData.token;
+        } else {
+            imagePath = imageData;
+            token = null;
+        }
+
+        // Create cache key
+        const cacheKey = token ? `${imagePath}_${token}` : imagePath;
+        
         // Check cache first
-        if (this.imageCache.has(imagePath)) {
-            return this.imageCache.get(imagePath);
+        if (this.imageCache.has(cacheKey)) {
+            return this.imageCache.get(cacheKey);
         }
 
         try {
-            if (this.storageRef) {
-                // Try to get image from Firebase Storage (gallery folder)
+            // If we have both filename and token, construct direct Firebase URL
+            if (imagePath && token && this.imagesConfig?.firebase?.storage) {
+                const bucket = this.imagesConfig.firebase.storage.bucket;
+                const folder = this.imagesConfig.firebase.storage.folder;
+                
+                // Construct the direct Firebase Storage URL
+                const directUrl = `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodeURIComponent(folder)}%2F${imagePath}?alt=media&token=${token}`;
+                
+                // Cache the URL
+                this.imageCache.set(cacheKey, directUrl);
+                console.log(`Using direct Firebase URL for: ${imagePath}`);
+                return directUrl;
+            }
+
+            // Fallback to Firebase SDK method if no token
+            if (this.storageRef && imagePath) {
                 const fullPath = `${this.imagesConfig.firebase.storage.folder}/${imagePath}`;
                 const imageRef = this.storageRef.child(fullPath);
                 const url = await imageRef.getDownloadURL();
                 
                 // Cache the URL
-                this.imageCache.set(imagePath, url);
-                console.log(`Successfully loaded image: ${imagePath}`);
+                this.imageCache.set(cacheKey, url);
+                console.log(`Successfully loaded image from Firebase SDK: ${imagePath}`);
                 return url;
             }
         } catch (error) {
-            console.warn(`Image not found in Firebase Storage: ${imagePath}`, error.message);
+            console.warn(`Error loading image: ${imagePath}`, error.message);
             
             // If it's a permission error, provide more specific guidance
             if (error.code === 'storage/unauthorized') {
@@ -108,32 +139,54 @@ class ConfigManager {
         }
 
         // Fallback to placeholder
-        const placeholderUrl = this.imagesConfig.images.placeholders[category] || 
-                              this.imagesConfig.images.placeholders.product;
+        const placeholderUrl = this.imagesConfig?.images?.placeholders?.[category] || 
+                              this.imagesConfig?.images?.placeholders?.product ||
+                              `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='%23ccc'/%3E%3Ctext x='200' y='150' text-anchor='middle' fill='%23666'%3EImage%3C/text%3E%3C/svg%3E`;
         console.log(`Using placeholder for ${imagePath}: ${category}`);
         return placeholderUrl;
     }
 
     // Preload critical images
     async preloadImages() {
-        const criticalImages = [
-            this.imagesConfig.images.hero.main,
-            ...this.imagesConfig.images.products.slice(0, 2).map(p => p.filename)
-        ];
+        if (!this.imagesConfig || !this.imagesConfig.images) {
+            console.log('Images config not loaded, skipping preload');
+            return;
+        }
 
-        const preloadPromises = criticalImages.map(async (imagePath) => {
+        const criticalImages = [];
+        
+        // Add hero image
+        if (this.imagesConfig.images.hero) {
+            criticalImages.push({
+                data: this.imagesConfig.images.hero,
+                category: 'hero'
+            });
+        }
+        
+        // Add first 2 product images
+        if (this.imagesConfig.images.products && this.imagesConfig.images.products.length > 0) {
+            this.imagesConfig.images.products.slice(0, 2).forEach(product => {
+                criticalImages.push({
+                    data: product,
+                    category: 'product'
+                });
+            });
+        }
+
+        const preloadPromises = criticalImages.map(async (imageItem) => {
             try {
-                const url = await this.getImageUrl(imagePath, 'hero');
+                const url = await this.getImageUrl(imageItem.data, imageItem.category);
                 // Preload the image
                 const img = new Image();
                 img.src = url;
                 return url;
             } catch (error) {
-                console.warn(`Failed to preload image: ${imagePath}`);
+                console.warn(`Failed to preload image:`, imageItem.data);
             }
         });
 
         await Promise.allSettled(preloadPromises);
+        console.log(`Preloaded ${criticalImages.length} critical images`);
     }
 
     // Get business configuration

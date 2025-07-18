@@ -81,7 +81,7 @@ class ContentInjector {
                 const category = products.categories[i];
                 const imageConfig = imagesConfig.images.products[i] || imagesConfig.images.products[0];
                 
-                const imageUrl = await this.configManager.getImageUrl(imageConfig.filename, 'product');
+                const imageUrl = await this.configManager.getImageUrl(imageConfig, 'product');
                 
                 const productCard = this.createProductCard(category, imageConfig, imageUrl);
                 carouselTrack.appendChild(productCard);
@@ -314,7 +314,7 @@ class ContentInjector {
         const heroImage = document.querySelector('.hero-image img');
         if (heroImage) {
             const heroImageUrl = await this.configManager.getImageUrl(
-                this.configManager.imagesConfig.images.hero.main, 
+                this.configManager.imagesConfig.images.hero, 
                 'hero'
             );
             heroImage.src = heroImageUrl;
