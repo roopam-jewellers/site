@@ -1158,6 +1158,147 @@ p {
 .mb-4 { margin-bottom: 2rem; }
 
 /* =========================================
+   Privacy Section Styles
+   ========================================= */
+
+.privacy {
+    padding: var(--section-padding);
+    background: var(--off-white);
+}
+
+.privacy-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.privacy-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.privacy-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.privacy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.privacy-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-icon i {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.privacy-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.privacy-card p {
+    color: var(--gray-700);
+    line-height: 1.6;
+}
+
+.privacy-details {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.privacy-details h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.privacy-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.privacy-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.privacy-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--light-blue);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.privacy-list li:last-child {
+    border-bottom: none;
+}
+
+.privacy-list li strong {
+    color: var(--primary-blue);
+}
+
+.privacy-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.privacy-actions .btn {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .privacy-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .privacy-details {
+        padding: 2rem;
+    }
+    
+    .privacy-actions {
+        flex-direction: column;
+    }
+    
+    .privacy-actions .btn {
+        min-width: auto;
+    }
+}
+
+/* =========================================
    Print Styles
    ========================================= */
 
